@@ -17,7 +17,7 @@
                BlueprintIdentifier = "E5D1436B1E6D638F005EEE8E"
                BuildableName = "TestDemo.app"
                BlueprintName = "TestDemo"
-               ReferencedContainer = "container:ReactiveCocoaTest.xcodeproj">
+               ReferencedContainer = "container:TestDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "E5D143841E6D638F005EEE8E"
                BuildableName = "TestDemoTests.xctest"
                BlueprintName = "TestDemoTests"
-               ReferencedContainer = "container:ReactiveCocoaTest.xcodeproj">
+               ReferencedContainer = "container:TestDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "E5D1438F1E6D638F005EEE8E"
                BuildableName = "TestDemoUITests.xctest"
                BlueprintName = "TestDemoUITests"
-               ReferencedContainer = "container:ReactiveCocoaTest.xcodeproj">
+               ReferencedContainer = "container:TestDemo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "E5D1436B1E6D638F005EEE8E"
             BuildableName = "TestDemo.app"
             BlueprintName = "TestDemo"
-            ReferencedContainer = "container:ReactiveCocoaTest.xcodeproj">
+            ReferencedContainer = "container:TestDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "E5D1436B1E6D638F005EEE8E"
             BuildableName = "TestDemo.app"
             BlueprintName = "TestDemo"
-            ReferencedContainer = "container:ReactiveCocoaTest.xcodeproj">
+            ReferencedContainer = "container:TestDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "E5D1436B1E6D638F005EEE8E"
             BuildableName = "TestDemo.app"
             BlueprintName = "TestDemo"
-            ReferencedContainer = "container:ReactiveCocoaTest.xcodeproj">
+            ReferencedContainer = "container:TestDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

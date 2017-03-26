@@ -19,18 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //dispatch_async 不阻塞当前线程
+    // Do any additional setup after loading the view.
     //target-action
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 200, 56)];
     textField.backgroundColor = [UIColor grayColor];
     [self.view addSubview:textField];
     
     //target--action
-    [[textField rac_textSignal] subscribeNext:^(UITextField *textField) {
-        NSLog(@"%@",textField);
-    }];
-    [[textField rac_signalForControlEvents:UIControlEventEditingChanged] subscribeNext:^(UITextField *field) {
-        NSLog(@"%@",field.text);
-    }];
+//    [[textField rac_textSignal] subscribeNext:^(UITextField *textField) {
+//        NSLog(@"%@",textField);
+//    }];
+//    [[textField rac_signalForControlEvents:UIControlEventEditingChanged] subscribeNext:^(UITextField *field) {
+//        NSLog(@"%@",field.text);
+//    }];
     
     //notification
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"111" object:nil] subscribeNext:^(id x) {
@@ -38,12 +40,13 @@
     }];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"111" object:@"111"];
     
-    //kvo
-    [RACObserve(self,title) subscribeNext:^(id x) {
-        NSLog(@"%@",x);
-    }];
+//    //kvo
+//    [RACObserve(self,title) subscribeNext:^(id x) {
+//        NSLog(@"%@",x);
+//    }];
     self.title = @"xxxx";
     //delegate
+    //代理
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"gogogo" message:@"gogogo" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
     [[self rac_signalForSelector:@selector(alertView:clickedButtonAtIndex:) fromProtocol:@protocol(UIAlertViewDelegate)] subscribeNext:^(RACTuple *tuple) {
         NSLog(@"%@",tuple.first);
@@ -221,7 +224,7 @@
     }];
     
     //RAC常见的坑
-    //1.RACObserve 带来的循环引用
+    //1.RACOBser 带来的循环饮用
     [subjectaaa subscribeNext:^(id x) {
         @strongify(self)
         RACObserve(self, title);
@@ -234,7 +237,7 @@
     }];
     [subjectaaa sendNext:@(123)];
     [subjectaaa sendCompleted];
-    //signal造成的多次订阅问题,使用reply，replayLazily让subscriber里面的代码只被执行一次
+    //signal造成的多次订阅问题
     
 }
 
